@@ -24,7 +24,9 @@ public class JdbcExample2 {
 		/* 2. DriverManager 객체를 이용해서 Connection 생성하기 */	
 			
 		/* 2-1. Oracle JDBC Driver 객체를 메모리에 적재 */
-		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Class.forName(
+				
+				"oracle.jdbc.driver.OracleDriver");
 			
 		/* 2-2) DB 연결 정보를 이용해서 Connection 객체 생성*/
 		String type     = "jdbc:oracle:thin:@"; // 드라이버 종류
