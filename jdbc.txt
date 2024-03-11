@@ -1,0 +1,29 @@
+JDBC : Jaba DataBase Connectivity 
+    Java에서 DB에 접근할 수 있게 해주는 Java 제공 코드(class, interface)
+    java.sql 패키지에 존재함
+
+순서
+	1. JDBC 객체 참조 변수 선언
+		1) Connection 객체 : 특정 DB와의 연결 정보 저장
+		2) Statement 객체 : SQL을 String 형태로 DB에 전달하고 결과를 받아옴
+		3) ReSultSet 객체 : SELECT 결과를 저장하는 객체
+			 조회되는 결과는 0행 이상, 커서를 이용해 1행씩만 접근 가능
+
+	2. DriverManager 객체를 이용해서 Connection 생성하기
+		1) Oracle JDBC Driver 객체를 메모리에 로드(적재)	하기
+		2) DB연결 정보를 이용해서 Connection 객체 생성
+
+	3. SQL 작성
+
+	4. Statement 객체 생성
+
+	5. Statement 객체를 이용해서  sql 수행 후 결과 반환 받기
+
+	6. 조회 결과가 담겨있는 ResultSet을 커서를 이용해 1행씩 접근하며 각 행의 컬럼 값 얻어오기
+
+	7. 사용이 종료된 JDBC 객체 자원 반환 : 만든 순서의 역순으로
+
+sql 작성 시 유의사항
+	++ JDBC에서 sql 작성 시 마지막 ; 작성하면 안됨
+	++ TRY-CATCH구문을 이용해 SQLException, ClassNOtFoundException 예외 처리
+	++ 7.은 sql을 작성한 catch 구문 종료 후 finally 구문 내에 작성
