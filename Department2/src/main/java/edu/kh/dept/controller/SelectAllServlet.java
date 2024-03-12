@@ -32,7 +32,7 @@ public class SelectAllServlet extends HttpServlet{
 			// 모든 부서 조회 Service 호출 후 결과 반환 받기
 			List<Department> deptList = service.selectAll();
 			
-			// DB 조회 결과를 request scope 에 세팅하여\
+			// DB 조회 결과를 request scope 에 세팅하여
 			// JSP로 요청 위임(forward)하기
 			
 			req.setAttribute("deptList", deptList);
