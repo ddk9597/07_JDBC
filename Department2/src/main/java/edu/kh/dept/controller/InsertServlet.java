@@ -3,6 +3,7 @@ package edu.kh.dept.controller;
 import java.io.IOException;
 
 import edu.kh.dept.model.dto.Department;
+import edu.kh.dept.model.exception.DepartmentInsertException;
 import edu.kh.dept.model.service.DepartmentService;
 import edu.kh.dept.model.service.DepartmentServiceImpl;
 import jakarta.servlet.ServletException;
@@ -86,8 +87,21 @@ public class InsertServlet extends HttpServlet{
 					resp.sendRedirect("/department/selectAll");
 					
 					
-				}catch (Exception e) {
+				} catch(DepartmentInsertException e){
+					// 제약조건 위배로 삽입 실패가 발생한 경우
+					
+					// request scope 객체에 에러 메세지 세팅
+					req.setAttribute("errorMessage", e.getMessage());
+					
+					// 에러 페이지 포워드
+					String path = "/WEB-INF/views/error.jsp";
+					req.getRequestDispatcher(path).forward(req, resp);
+					
+		
+				}		
+				catch (Exception e) {
 					e.printStackTrace();
+					// 에러페이지 forward
 				}
 		
 	}

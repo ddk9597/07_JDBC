@@ -6,7 +6,7 @@ JDBC : Jaba DataBase Connectivity
 	1. JDBC 객체 참조 변수 선언
 		1) Connection 객체 : 특정 DB와의 연결 정보 저장
 		2) Statement 객체 : SQL을 String 형태로 DB에 전달하고 결과를 받아옴
-		3) ReSultSet 객체 : SELECT 결과를 저장하는 객체
+		3) ResultSet 객체 : SELECT 결과를 저장하는 객체
 			 조회되는 결과는 0행 이상, 커서를 이용해 1행씩만 접근 가능
 
 	2. DriverManager 객체를 이용해서 Connection 생성하기

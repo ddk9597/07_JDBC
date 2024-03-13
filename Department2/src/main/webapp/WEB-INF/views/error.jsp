@@ -15,6 +15,9 @@
     <title>ErrorPage</title>
 </head>
 <body>
-    
+    <h1>${errorMessage}</h1>
+
+    <button onclick="history.back()" >뒤로 가기</button>
+    <button onclick="location.href='/' ">메인 페이지</button>
 </body>
 </html>
