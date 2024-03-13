@@ -15,6 +15,13 @@ public interface DepartmentService {
 	 * @throws SQLException
 	 */
 	List<Department> selectAll() throws SQLException;
+
+	/** 부서 추가 서비스
+	 * @param dept
+	 * @return result(삽입된 행의 갯수 반환)
+	 * @throws SQLException 
+	 */
+	int insertDepartment(Department dept) throws SQLException;
 	
 	
 	
