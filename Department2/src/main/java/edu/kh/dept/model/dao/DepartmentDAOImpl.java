@@ -219,22 +219,30 @@ public class DepartmentDAOImpl implements DepartmentDAO{
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + keyword + "%");
 			
-			// 4. SQL 수행 후 결과 반환 받기
+			
+			// 4. SQL 수행 후 결과 반환 받기(Result Set)
 			rs = pstmt.executeQuery();
 			
 			// ResultSet 한 행 씩 접근해서 컬럼 값을 얻어온 후
 			// deptList에 옮겨 담기
 			while(rs.next()) {
 				
-				String deptId     = rs.getString("DEPT_ID");
-				String deptTitle  = rs.getString("DEPT_TITLE");
-				String locationId = rs.getString("LOCATION_ID");
+//				String deptId     = rs.getString("DEPT_ID");
+//				String deptTitle  = rs.getString("DEPT_TITLE");
+//				String locationId = rs.getString("LOCATION_ID");
+				// 이렇게 써도 되긴 함
+				
+				String deptId     = rs.getString(1); // 숫자 : 조회 결과 컬럼 순서
+				String deptTitle  = rs.getString(2); // 권하는 방식은 아님 이런 것 도 있다 참고용으로만..
+				String locationId = rs.getString(3);
 				
 				Department dept = new Department(deptId, deptTitle, locationId);
 				
 				deptList.add(dept);
 			}
+			
 		} finally {
+			// jdbc 객체 자원 반환
 			close(rs);
 			close(pstmt);
 			
@@ -242,5 +250,7 @@ public class DepartmentDAOImpl implements DepartmentDAO{
 		
 		return deptList;
 	}
+	
+	
 	
 }

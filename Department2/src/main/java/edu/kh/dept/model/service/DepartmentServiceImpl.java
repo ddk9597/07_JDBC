@@ -204,6 +204,7 @@ public class DepartmentServiceImpl implements DepartmentService{
 		
 		// 1. conn
 		Connection conn = getConnection();
+		
 		// 2. DAO메서드 호출 후 결과 반환
 		List<Department> deptList = dao.searchDeparment(conn, keyword);
 		

@@ -32,8 +32,10 @@ public class SearchServlet extends HttpServlet{
 			//forward할 JSP 경로
 			String path = "/WEB-INF/views/search.jsp";
 			
+			// 조회 결과를 request scope 속성으로 세팅
 			req.setAttribute("deptList", deptList);
 			
+			// 지정된 jsp로 요청 위임
 			req.getRequestDispatcher(path).forward(req, resp);
 			
 			
