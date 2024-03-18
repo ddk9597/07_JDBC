@@ -225,7 +225,7 @@ public class TodoDAOImpl implements TodoDAO{
 				String sql = prop.getProperty("deleteTodo");
 				
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt   (1, todoNo);
+				pstmt.setInt(1, todoNo);
 				
 				result = pstmt.executeUpdate();
 				
