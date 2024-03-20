@@ -27,7 +27,6 @@ public class TodoDAOImpl implements TodoDAO{
 	// Properties 객체 참조 변수 선언
 	private Properties prop;
 	
-
 	// 기본 생성자로 객체 생성 시 
 	// Properties 객체 생성 + xml 파일 내용 읽어오기
 	public TodoDAOImpl() {
@@ -225,7 +224,7 @@ public class TodoDAOImpl implements TodoDAO{
 				String sql = prop.getProperty("deleteTodo");
 				
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt   (1, todoNo);
+				pstmt.setInt(1, todoNo);
 				
 				result = pstmt.executeUpdate();
 				
