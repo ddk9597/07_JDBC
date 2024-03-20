@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "file:///C:/tools/lib/properties.dtd">
+
+<properties>
+	
+	<!-- 할 일 목록 조회 -->
+	<entry key="selectAll">
+		SELECT TODO_NO, TODO_TITLE, COMPLETE,
+		TO_CHAR(REG_DATE, 'YYYY-MM-DD HH24:MI:SS')REG_DATE
+		FROM TB_TODO
+	</entry>
+	
+	<!-- 완료된 할 일 개수 조회 -->
+	<entry key="getCompleteCount">
+		SELECT COUNT(*)
+		FROM TB_TODO 
+		WHERE COMPLETE = 'Y'
+	</entry>
+	
+	
+</properties>
